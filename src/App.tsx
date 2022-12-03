@@ -7,6 +7,10 @@ function App() {
   const [todos, setTodos] = useState<Todo[]>([])
 
   const todoAddHandler = (text: string) => {
+    setTodos(prevTodos => [
+      ...prevTodos,
+      {id: Math.random().toString(), text: text}
+    ] )
     console.log(text);    
   }
 
